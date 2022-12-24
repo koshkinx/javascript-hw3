@@ -32,17 +32,15 @@ eat();
 // 3) Створити функцію яка отримує як аргумент массив
 // і вираховує середнє значення всіх чисел. ( при розрахунках вважайте що массив може бути будьякої довжини переданий)
 
-let ser = arrRandomNumbers.length;
-let jus = 0;
-function sum(b) {
-  for (i = 0; i < ser; i++) {
-    let a = arrRandomNumbers[i];
-    jus += a;
+function sum(arr, length, value) {
+  let start = value;
+  for (i = 0; i < length; i++) {
+    let a = arr[i];
+    start += a;
   }
-  b = jus / ser;
-  console.log(b);
+  return (b = start / length);
 }
-sum();
+console.log(sum(arrRandomNumbers, arrRandomNumbers.length, 0));
 
 // 4)Створити функцію яка замінює в массиві =) на ;)
 
@@ -61,7 +59,7 @@ newSmile();
 // 5) створити функцію яка отримує аргумент, якщо це 'last' то функція створює массив поміщає в нього останній елемент массиву
 //   і видаляє останній елемент  массиву animals, якщо аргумент 'first' то також записує перший елемент массиву до нового массиву і видаляє перший
 
-   елемент з animals
+//    елемент з animals
 let animals = ["cat", "cow", "fish", "chicken", "dog", "pig"];
 let q = prompt("введи last чи first ");
 function game() {
@@ -105,15 +103,16 @@ finish = parseInt(
 );
 anyArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-function cutValue() {
+function cutValue(start, finish, array) {
   if (start < finish) {
+    let newAnyArray = array.slice(start, finish);
+    console.log(newAnyArray.length);
+    console.log(newAnyArray);
+    return newAnyArray;
   } else {
     alert(
       "стартове значення повинно бути менше фінішного.фшнішне не більше 17"
     );
   }
-  let newAnyArray = anyArray.slice(start, finish);
-  console.log(newAnyArray.length);
-  console.log(newAnyArray);
 }
-cutValue();
+cutValue(start, finish, anyArray);
